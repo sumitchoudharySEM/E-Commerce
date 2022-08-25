@@ -33,7 +33,7 @@ class AdminController extends Controller
         }
         else{
             $request->session()->flash('error','plese enter valid login detailes');
-            return redirect()->back();
+            return redirect('admin');
         }
     }
 
