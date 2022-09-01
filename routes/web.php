@@ -31,6 +31,7 @@ Route::group(['middleware' => 'admin_auth'], function(){
     Route::get('admin/category/delete/{id}', [CategoryController::class, 'delete']);
     Route::get('admin/category/edit/{id}', [CategoryController::class, 'edit']);
     Route::post('admin/category/update/{id}', [CategoryController::class, 'update']);
+    Route::get('admin/category/status/{status}/{id}', [CategoryController::class, 'status']);
 
 
     Route::get('admin/coupon', [CouponController::class, 'index']);
@@ -39,6 +40,7 @@ Route::group(['middleware' => 'admin_auth'], function(){
     Route::get('admin/coupon/delete/{id}', [CouponController::class, 'delete']);
     Route::get('admin/coupon/edit/{id}', [CouponController::class, 'edit']);
     Route::post('admin/coupon/update/{id}', [CouponController::class, 'update']);
+    Route::get('admin/coupon/status/{status}/{id}', [CouponController::class, 'status']);
 
     Route::get('admin/dashboard', [AdminController::class, 'dashboard']);
     Route::get('/admin/logout', function () {

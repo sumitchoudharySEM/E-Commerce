@@ -34,6 +34,7 @@ class CategoryController extends Controller {
         $model = new Category();
         $model->category_name = $request->post( 'category_name' );
         $model->category_slug = $request->post( 'category_slug' );
+        $model->status = 1;
         $model->save();
 
         $request->session()->flash( 'message', 'category Inserted Successfully' );
@@ -65,6 +66,13 @@ class CategoryController extends Controller {
         $model->category_slug= $request->post('category_slug');
         $model->save();
         $request->session()->flash('message','updated category successfully');
+        return redirect('admin/category');
+    }
+    public function status(Request $request, $status,$id ) {
+        $model =Category::find($id );
+        $model->status=$status;
+        $model->save();
+        $request->session()->flash('message','status updated successfully');
         return redirect('admin/category');
     }
 
