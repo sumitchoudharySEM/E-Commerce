@@ -28,7 +28,7 @@ class CategoryController extends Controller {
         // return $request->post( '' );
         $request->validate( [
             'category_name'=>'required',
-            'category_slug'=>'required|unique:categories',
+            'category_slug'=>'required|unique:categories,category_slug',
         ] );
 
         $model = new Category();

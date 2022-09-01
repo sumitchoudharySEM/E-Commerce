@@ -49,6 +49,10 @@
                             <a href="{{ url('admin/category') }}">
                                 <i class="fas fa-tachometer-alt"></i>Catogery</a>
                         </li>
+                        <li>
+                            <a href="{{ url('admin/coupon') }}">
+                                <i class="fas fa-tachometer-alt"></i>Coupon</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -73,7 +77,10 @@
                             <a href="{{ url('admin/category') }}">
                                 <i class="fas fa-tachometer-alt"></i>Catogery</a>
                         </li>
-
+                        <li>
+                            <a href="{{ url('admin/coupon') }}">
+                                <i class="fas fa-tachometer-alt"></i>Coupon</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -124,7 +131,7 @@
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-             <div class="main-content m-l-40 m-r-40">
+            <div class="main-content m-l-40 m-r-40">
                 @section('container')
                 @show
             </div>
