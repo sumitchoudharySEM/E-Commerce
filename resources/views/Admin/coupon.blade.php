@@ -1,5 +1,6 @@
 @extends('Admin/layout')
 @section('title', 'Coupon')
+@section('coupon-selected', 'active')
 @section('container')
     {{ session('message') }}
     <h1 class="m-b-10">Coupon page</h1>

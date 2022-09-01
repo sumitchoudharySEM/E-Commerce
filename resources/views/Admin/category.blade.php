@@ -1,5 +1,6 @@
 @extends('Admin/layout')
 @section('title', 'Category')
+@section('category-selected', 'active')
 @section('container')
     {{ session('message') }}
     <h1 class="m-b-10">Category page</h1>

@@ -41,17 +41,17 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
-                        <li>
+                        <li class="@yield('dashboard-selected')">
                             <a href="{{ url('admin/dashboard') }}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <li>
+                        <li class="@yield('category-selected')">
                             <a href="{{ url('admin/category') }}">
-                                <i class="fas fa-tachometer-alt"></i>Catogery</a>
+                                <i class="fas fa-list"></i>Catogery</a>
                         </li>
-                        <li>
+                        <li class="@yield('coupon-selected')">
                             <a href="{{ url('admin/coupon') }}">
-                                <i class="fas fa-tachometer-alt"></i>Coupon</a>
+                                <i class="fas fa-tag"></i>Coupon</a>
                         </li>
                     </ul>
                 </div>
@@ -69,17 +69,17 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li>
+                        <li class="@yield('dashboard-selected')">
                             <a href="{{ url('admin/dashboard') }}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <li>
+                        <li class="@yield('category-selected')">
                             <a href="{{ url('admin/category') }}">
-                                <i class="fas fa-tachometer-alt"></i>Catogery</a>
+                                <i class="fas fa-list"></i>Catogery</a>
                         </li>
-                        <li>
+                        <li class="@yield('coupon-selected')">
                             <a href="{{ url('admin/coupon') }}">
-                                <i class="fas fa-tachometer-alt"></i>Coupon</a>
+                                <i class="fas fa-tag"></i>Coupon</a>
                         </li>
                     </ul>
                 </nav>

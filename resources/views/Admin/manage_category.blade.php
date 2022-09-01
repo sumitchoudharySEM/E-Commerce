@@ -1,5 +1,6 @@
 @extends('Admin/layout')
 @section('title', 'Manage Category')
+@section('category-selected', 'active')
 @section('container')
     <h1 class="m-b-10">{{ $heading }}</h1>
     <a href="{{ url('admin/category') }}">
