@@ -1,5 +1,5 @@
 @extends('Admin/layout')
-
+@section('title', 'Category')
 @section('container')
     {{ session('message') }}
     <h1 class="m-b-10">Category page</h1>
@@ -29,6 +29,9 @@
                             <td >
                                 <a href="{{ url('admin/category/delete') }}/{{ $list->id }}">
                                     <button type="button" class="btn btn-danger">Delete</button>
+                                </a>
+                                <a href="{{ url('admin/category/edit') }}/{{ $list->id }}">
+                                    <button type="button" class="btn btn-primary">Edit</button>
                                 </a>
                             </td>
                         </tr>
