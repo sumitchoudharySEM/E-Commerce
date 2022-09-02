@@ -18,7 +18,6 @@
     <!-- Main CSS-->
     <link href={{ url('/Admin_assets/css/theme.css') }} rel="stylesheet" media="all" />
 </head>
-
 <body>
 
     <div class="page-wrapper">

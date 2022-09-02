@@ -2,7 +2,15 @@
 @section('title', 'color')
 @section('color-selected', 'active')
 @section('container')
-    {{ session('message') }}
+    @if (session()->has('message'))
+        <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+            <span class="badge badge-pill badge-success"></span>
+            {{ session('message') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+    @endif
     <h1 class="m-b-10">color page</h1>
     <a href="{{ url('/admin/color/manage_color') }}">
         <button type="button" class="btn btn-success">Add color</button>
@@ -21,28 +29,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ( $data as $list)
-                        <tr>
-                            <td>{{ $list->id }}</td>
-                            <td>{{ $list->color }}</td>
-                            <td >
-                                <a href="{{ url('admin/color/edit') }}/{{ $list->id }}">
-                                    <button type="button" class="btn btn-primary">Edit</button>
-                                </a>
-                                @if($list->status==1)
-                                <a href="{{ url('admin/color/status/0') }}/{{ $list->id }}">
-                                    <button type="button" class="btn btn-success">Active</button>
-                                </a>
-                                @else
-                                <a href="{{ url('admin/color/status/1') }}/{{ $list->id }}">
-                                    <button type="button" class="btn btn-warning">Deactive</button>
-                                </a>
-                                @endif
-                                <a href="{{ url('admin/color/delete') }}/{{ $list->id }}">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </td>
-                        </tr>
+                        @foreach ($data as $list)
+                            <tr>
+                                <td>{{ $list->id }}</td>
+                                <td>{{ $list->color }}</td>
+                                <td>
+                                    <a href="{{ url('admin/color/edit') }}/{{ $list->id }}">
+                                        <button type="button" class="btn btn-primary">Edit</button>
+                                    </a>
+                                    @if ($list->status == 1)
+                                        <a href="{{ url('admin/color/status/0') }}/{{ $list->id }}">
+                                            <button type="button" class="btn btn-success">Active</button>
+                                        </a>
+                                    @else
+                                        <a href="{{ url('admin/color/status/1') }}/{{ $list->id }}">
+                                            <button type="button" class="btn btn-warning">Deactive</button>
+                                        </a>
+                                    @endif
+                                    <a href="{{ url('admin/color/delete') }}/{{ $list->id }}">
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    </a>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
