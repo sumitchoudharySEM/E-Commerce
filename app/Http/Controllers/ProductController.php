@@ -22,7 +22,9 @@ class ProductController extends Controller
         $url= 'product/manage_product_process';
         $heading = 'manage product';
         $category = DB::table('categories')->where(['status'=>1])->get();
-        $result = compact( 'heading','url','category' );
+        $size = DB::table('sizes')->where(['status'=>1])->get();
+        $color = DB::table('colors')->where(['status'=>1])->get();
+        $result = compact( 'heading','url','category','size','color' );
         return view( 'Admin/manage_product' )->with( $result );
         
         // echo '<pre>';
@@ -80,7 +82,9 @@ class ProductController extends Controller
             $url= 'product/update'.'/'.$id;
             $heading = 'Edit product';
             $category = DB::table('categories')->where(['status'=>1])->get();
-            $result = compact( 'model', 'heading','url','category');
+            $size = DB::table('sizes')->where(['status'=>1])->get();
+            $color = DB::table('colors')->where(['status'=>1])->get();
+            $result = compact( 'model', 'heading','url','category','size','color');
             return view( 'Admin/manage_product' )->with( $result );
         }
         else{

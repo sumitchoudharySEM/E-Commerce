@@ -11,6 +11,7 @@
         media="all" />
     <link href={{ url('/Admin_assets/vendor/font-awesome-5/css/fontawesome-all.min.css') }} rel="stylesheet"
         media="all" />
+    <link rel="stylesheet" media="all" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
     <link href={{ url('/Admin_assets/vendor/mdi-font/css/material-design-iconic-font.min.css') }} rel="stylesheet"
         media="all" />
     <!-- Bootstrap CSS-->
