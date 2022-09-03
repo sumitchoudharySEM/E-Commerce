@@ -14,7 +14,7 @@
     @endif
 
     <h1 class="m-b-10">Category page</h1>
-    <a href="{{ url('/admin/coupon/manage_category') }}">
+    <a href="{{ url('/admin/category/manage_category') }}">
         <button type="button" class="btn btn-success">Add Category</button>
     </a>
 

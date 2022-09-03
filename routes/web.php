@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,15 @@ Route::group(['middleware' => 'admin_auth'], function(){
     Route::get('admin/color/edit/{id}', [ColorController::class, 'edit']);
     Route::post('admin/color/update/{id}', [ColorController::class, 'update']);
     Route::get('admin/color/status/{status}/{id}', [ColorController::class, 'status']);
+
+
+    Route::get('admin/product', [ProductController::class, 'index']);
+    Route::get('admin/product/manage_product', [ProductController::class, 'manage_product']);
+    Route::post('admin/product/manage_product_process', [ProductController::class, 'manage_product_process'])->name('product.insert');
+    Route::get('admin/product/delete/{id}', [ProductController::class, 'delete']);
+    Route::get('admin/product/edit/{id}', [ProductController::class, 'edit']);
+    Route::post('admin/product/update/{id}', [ProductController::class, 'update']);
+    Route::get('admin/product/status/{status}/{id}', [ProductController::class, 'status']);
 
 
     Route::get('admin/dashboard', [AdminController::class, 'dashboard']);
