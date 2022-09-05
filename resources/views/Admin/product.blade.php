@@ -63,7 +63,7 @@
                                 <td>{{ $list->warranty }}</td>
                                 <td>{{ $list->image }}</td> --}}
                                 <td>
-                                    <a href="{{ url('admin/product/edit') }}/{{ $list->id }}">
+                                    <a href="{{ url('admin/product/manage_product') }}/{{ $list->id }}">
                                         <button type="button" class="btn btn-primary">Edit</button>
                                     </a>
                                     @if ($list->status == 1)

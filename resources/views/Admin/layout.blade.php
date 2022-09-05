@@ -172,6 +172,10 @@
     <script src={{ url('/Admin_assets/vendor/bootstrap-4.1/bootstrap.min.js') }}></script>
     <script src={{ url('/Admin_assets/vendor/wow/wow.min.js') }}></script>
     <script src={{ url('/Admin_assets/js/main.js') }}></script>
+    <script
+  {{-- src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script> --}}
 </body>
 
 </html>
