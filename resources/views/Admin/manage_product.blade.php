@@ -12,6 +12,10 @@ else{
 @endphp
 
 <h1 class="mb10">Manage Product</h1>
+@error('attr_image.*')
+   {{ $message }}
+@enderror
+{{-- {{ session('sku_error') }} --}}
 <a href="{{url('admin/product')}}">
 <button type="button" class="btn btn-success">
 Back
@@ -166,6 +170,10 @@ Back
                            <div class="col-md-4">
                               <label for="attr_image" class="control-label mb-1"> Image</label>
                               <input id="attr_image" name="attr_image[]" type="file" class="form-control" aria-required="true" aria-invalid="false" required>
+
+                              @if($pAArr['attr_image']!='')
+                              <img width="100px" src="{{ asset('storage/media/'.$pAArr['attr_image']) }}" >
+                              @endif
                            </div>
                            <div class="col-md-2">
                               <label for="attr_image" class="control-label mb-1"> 
@@ -200,7 +208,7 @@ Back
    var loop_count=1; 
    function add_more(){
        loop_count++;
-       var html='<input id="paid" type="text" name="paid[]" ><div class="card" id="product_attr_'+loop_count+'"><div class="card-body"><div class="form-group"><div class="row">';
+       var html='<input id="paid" type="hidden" name="paid[]" ><div class="card" id="product_attr_'+loop_count+'"><div class="card-body"><div class="form-group"><div class="row">';
 
        html+='<div class="col-md-2"><label for="sku" class="control-label mb-1"> SKU</label><input id="sku" name="sku[]" type="text" class="form-control" aria-required="true" aria-invalid="false" required></div>'; 
 
@@ -209,9 +217,11 @@ Back
        html+='<div class="col-md-2"><label for="price" class="control-label mb-1"> Price</label><input id="price" name="price[]" type="text" class="form-control" aria-required="true" aria-invalid="false" required></div>';
 
        var size_id_html=jQuery('#size_id').html(); 
+       size_id_html=size_id_html.replace("selected","");
        html+='<div class="col-md-3"><label for="size_id" class="control-label mb-1"> Size</label><select id="size_id" name="size_id[]" class="form-control">'+size_id_html+'</select></div>';
 
-       var color_id_html=jQuery('#color_id').html(); 
+       var color_id_html=jQuery('#color_id').html();
+       color_id_html=color_id_html.replace("selected",""); 
        html+='<div class="col-md-3"><label for="color_id" class="control-label mb-1"> Color</label><select id="color_id" name="color_id[]" class="form-control" >'+color_id_html+'</select></div>';
 
        html+='<div class="col-md-2"><label for="qty" class="control-label mb-1"> Qty</label><input id="qty" name="qty[]" type="text" class="form-control" aria-required="true" aria-invalid="false" required></div>';
