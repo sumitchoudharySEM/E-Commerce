@@ -49,7 +49,7 @@
                                 <td>{{ $list->name }}</td>
                                 <td>{{ $list->slug }}</td>
                                 <td>
-                                    <img width="100px" src="{{ asset('storage/media/brand/'.$list->image) }}" alt="{{ $list->image }}">
+                                    <img width="100px" src="{{ asset('storage/media/'.$list->image) }}" alt="{{ $list->image }}">
                                 </td>
                                 {{-- php artisan storage:link --}}
                                 {{-- <td>{{ $list->category_id }}</td>

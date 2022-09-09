@@ -83,7 +83,10 @@ class ProductController extends Controller
 
          $result[ 'sizes' ] = DB::table( 'sizes' )->where( [ 'status'=>1 ] )->get();
 
+         $result[ 'brands' ] = DB::table( 'brands' )->where( [ 'status'=>1 ] )->get();
+
          $result[ 'colors' ] = DB::table( 'colors' )->where( [ 'status'=>1 ] )->get();
+
          return view( 'Admin/manage_product', $result );
     }
 

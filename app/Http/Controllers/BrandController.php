@@ -31,7 +31,7 @@ class BrandController extends Controller
         
         $request->validate( [
             'name'=>'required|unique:brands,name',
-            'image' =>'required|mimes:,jpeg',
+            'image' =>'required|mimes:png,jpg,jpeg',
         ] );
         
         $model = new Brand();
@@ -40,7 +40,7 @@ class BrandController extends Controller
             $image = $request->file( 'image' );
             $ext = $image->extension();
             $image_name = time().'.'.$ext;
-            $image->storeAs( '/public/media', $image_name );
+            $image->storeAs( '/public/media/brand', $image_name );
             $model->image = $image_name;
             // echo "$image_name" + "my name is antheny";
         }

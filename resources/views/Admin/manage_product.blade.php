@@ -78,7 +78,18 @@ $image_required="required";
                                     </div>
                                     <div class="col-md-4">
                                         <label for="brand" class="control-label mb-1"> Brand</label>
-                                        <input id="brand" value="{{$brand}}" name="brand" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+                                        <select id="brand" name="brand" class="form-control" required>
+                                            <option value="">Select Brand</option>
+                                            @foreach($brands as $list)
+                                            @if($id==$list->id)
+                                            <option selected value="{{$list->id}}">
+                                                @else
+                                            <option value="{{$list->id}}">
+                                                @endif
+                                                {{$list->name}}
+                                            </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="col-md-4">
                                         <label for="model" class="control-label mb-1"> Model</label>

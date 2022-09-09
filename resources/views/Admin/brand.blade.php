@@ -35,7 +35,7 @@
                                 <td>{{ $list->id }}</td>
                                 <td>{{ $list->name }}</td>
                                 <td>
-                                    <img width="100px" src="{{ asset('storage/media/brand'.$list->image) }}" alt="{{ $list->image }}">
+                                    <img width="100px" src="{{ asset('storage/media/brand/'.$list->image) }}" alt="{{ $list->image }}">
                                 </td>
                                 <td>
                                     <a href="{{ url('admin/brand/edit') }}/{{ $list->id }}">
