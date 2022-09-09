@@ -1,8 +1,7 @@
 @extends('Admin/layout')
-@section('title', 'product')
-@section('product-selected', 'active')
+@section('title', 'brand')
+@section('brand-selected', 'active')
 @section('container')
-
     @if (session()->has('message'))
         <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
             <span class="badge badge-pill badge-success"></span>
@@ -12,10 +11,9 @@
             </button>
         </div>
     @endif
-
-    <h1 class="m-b-10">product page</h1>
-    <a href="{{ url('/admin/product/manage_product') }}">
-        <button type="button" class="btn btn-success">Add product</button>
+    <h1 class="m-b-10">brand page</h1>
+    <a href="{{ url('/admin/brand/manage_brand') }}">
+        <button type="button" class="btn btn-success">Add brand</button>
     </a>
 
     <div class="row m-t-30">
@@ -26,19 +24,8 @@
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>product Name</th>
-                            <th>Slug</th>
+                            <th>Brand</th>
                             <th>Image</th>
-                            {{-- <th>category_id</th>
-                            <th>brand</th>
-                            <th>model</th>
-                            <th>desc</th>
-                            <th>short_desc</th>
-                            <th>keywords</th>
-                            <th>technical_specification</th>
-                            <th>uses</th>
-                            <th>warranty</th>
-                            <th>image</th> --}}
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -47,39 +34,25 @@
                             <tr>
                                 <td>{{ $list->id }}</td>
                                 <td>{{ $list->name }}</td>
-                                <td>{{ $list->slug }}</td>
                                 <td>
-                                    <img width="100px" src="{{ asset('storage/media/brand/'.$list->image) }}" alt="{{ $list->image }}">
+                                    <img width="100px" src="{{ asset('storage/media/brand'.$list->image) }}" alt="{{ $list->image }}">
                                 </td>
-                                {{-- php artisan storage:link --}}
-                                {{-- <td>{{ $list->category_id }}</td>
-                                <td>{{ $list->brand }}</td>
-                                <td>{{ $list->model }}</td>
-                                <td>{{ $list->desc }}</td>
-                                <td>{{ $list->short_desc }}</td>
-                                <td>{{ $list->keywords }}</td>
-                                <td>{{ $list->technical_specification }}</td>
-                                <td>{{ $list->uses }}</td>
-                                <td>{{ $list->warranty }}</td>
-                                <td>{{ $list->image }}</td> --}}
                                 <td>
-                                    <a href="{{ url('admin/product/manage_product') }}/{{ $list->id }}">
+                                    <a href="{{ url('admin/brand/edit') }}/{{ $list->id }}">
                                         <button type="button" class="btn btn-primary">Edit</button>
                                     </a>
                                     @if ($list->status == 1)
-                                        <a href="{{ url('admin/product/status/0') }}/{{ $list->id }}">
+                                        <a href="{{ url('admin/brand/status/0') }}/{{ $list->id }}">
                                             <button type="button" class="btn btn-success">Active</button>
                                         </a>
                                     @else
-                                        <a href="{{ url('admin/product/status/1') }}/{{ $list->id }}">
+                                        <a href="{{ url('admin/brand/status/1') }}/{{ $list->id }}">
                                             <button type="button" class="btn btn-warning">Deactive</button>
                                         </a>
                                     @endif
-
-                                    <a href="{{ url('admin/product/delete') }}/{{ $list->id }}">
+                                    <a href="{{ url('admin/brand/delete') }}/{{ $list->id }}">
                                         <button type="button" class="btn btn-danger">Delete</button>
                                     </a>
-
                                 </td>
                             </tr>
                         @endforeach

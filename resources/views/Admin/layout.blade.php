@@ -66,6 +66,10 @@
                             <a href="{{ url('admin/product') }}">
                             <i class="fas fa-tachometer-alt"></i>Product</a>
                         </li>
+                        <li class="@yield('brand-selected')">
+                            <a href="{{ url('admin/brand') }}">
+                            <i class="fas fa-tachometer-alt"></i>Brand</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -107,6 +111,10 @@
                         <li class="@yield('product-selected')">
                             <a href="{{ url('admin/product') }}">
                                 <i class="fas fa-tachometer-alt"></i>Product</a>
+                        </li>
+                        <li class="@yield('brand-selected')">
+                            <a href="{{ url('admin/brand') }}">
+                            <i class="fas fa-tachometer-alt"></i>Brand</a>
                         </li>
                     </ul>
                 </nav>

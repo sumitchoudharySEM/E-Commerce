@@ -7,6 +7,7 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,15 @@ Route::group(['middleware' => 'admin_auth'], function(){
     Route::get('admin/color/edit/{id}', [ColorController::class, 'edit']);
     Route::post('admin/color/update/{id}', [ColorController::class, 'update']);
     Route::get('admin/color/status/{status}/{id}', [ColorController::class, 'status']);
+
+
+    Route::get('admin/brand', [BrandController::class, 'index']);
+    Route::get('admin/brand/manage_brand', [BrandController::class, 'manage_brand']);
+    Route::post('admin/brand/manage_brand_process', [BrandController::class, 'manage_brand_process'])->name('brand.insert');
+    Route::get('admin/brand/delete/{id}', [BrandController::class, 'delete']);
+    Route::get('admin/brand/edit/{id}', [BrandController::class, 'edit']);
+    Route::post('admin/brand/update/{id}', [BrandController::class, 'update']);
+    Route::get('admin/brand/status/{status}/{id}', [BrandController::class, 'status']);
 
 
     Route::get('admin/product', [ProductController::class, 'index']);
