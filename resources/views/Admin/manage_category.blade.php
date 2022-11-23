@@ -20,6 +20,7 @@
                                 aria-required="true" aria-invalid="false" required
                                 @isset($model)
                                 value="{{ $model->category_name }}"
+                                @else
                                @endisset />
                             @error('category_name')
                                 <div class="alert alert-danger">

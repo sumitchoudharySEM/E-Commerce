@@ -24,6 +24,7 @@ $image_required="required";
         Back
     </button>
 </a>
+<script src={{ asset('ckeditor/ckeditor.js') }}></script>
 <div class="row m-t-30">
     <div class="col-md-12">
         <form action="{{url('admin/product/manage_product_process')}}" method="post" enctype="multipart/form-data">
@@ -314,6 +315,10 @@ $image_required="required";
     function remove_image_more(loop_image_count) {
         jQuery('#product_images_' + loop_image_count).remove();
     }
+
+    CKEDITOR.replace('short_desc');
+    CKEDITOR.replace('desc');
+    CKEDITOR.replace('technical_specification');
 
 </script>
 @endsection
